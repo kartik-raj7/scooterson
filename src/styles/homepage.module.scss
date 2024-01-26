@@ -1,0 +1,108 @@
+@import './variables.scss';
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    // background-color: $secondary-color;
+    align-items: center;
+    padding: 20px 10%;
+    border-bottom: 1px solid #aba5a5;
+}
+.companylogo{
+    color: $secondary-color;
+    font-family: 'Roboto';
+    padding: 10px 0;
+    font-size: large;
+}
+.homepage{
+    background-color: $primary-color;
+    height: 100vh;
+}
+.homepagenavbtn{
+    background-color: $secondary-color;
+    color: white;
+    width: 120px;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+.herodiv{
+    width: 80%;
+}
+.herostyle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.carouselimage{
+ width: 500px !important;
+ height: 450px !important;
+}
+.rightsidehero{
+    padding: 25px 0;
+}
+.leftsidehero{
+    display: flex;
+    justify-content: center;
+    // align-items: center;
+    flex-direction: column;
+}
+.heroheading{
+    font-size: 45px;
+    text-transform: uppercase;
+    padding: 25px 0;
+    color: $secondary-color;
+}
+.herosubheading{
+    font-size: 20px;
+    padding: 20px 0;
+}
+.rightsidehero{
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+}
+.rightsidecarouseldiv{
+    width: 95%;
+}
+.authbtns{
+    padding: 25px 0;
+}
+.registerbtn{
+    background-color: $secondary-color;
+    color: white;
+    padding: 20px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+.loginbtn{
+    padding: 20px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+  }
+  
+  .socialIcons {
+    display: flex;
+    gap: 10px;
+    width: 80%;
+  }
+  
+  .socialIcon {
+    width: 30px;
+    height: 30px;
+    padding: 0 20px;
+    // color: $primary-color;
+  }
