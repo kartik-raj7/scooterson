@@ -2,6 +2,7 @@ import { Button, Col, Image, Row } from 'antd'
 import React from 'react'
 import style from '../../styles/homepage.module.scss'
 import { GrAnnounce } from "react-icons/gr";
+import {motion} from 'framer-motion'
 const Navbar = () => {
   return (
     <>
@@ -9,9 +10,10 @@ const Navbar = () => {
     <Col className={style.companylogo}>AdVantageHub <GrAnnounce/></Col>
     {/* <Image src='/logo.png'/> */}
     <Col>
-    <Button className={style.homepagenavbtn}>
+    <motion.button whileTap={{ scale: 0.85 }} className={style.homepagenavbtn}>
     Get Started
-    </Button>
+    </motion.button>
+    
     </Col>
     </Row>
     </>

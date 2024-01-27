@@ -12,20 +12,21 @@
     font-family: 'Roboto';
     padding: 10px 0;
     font-size: large;
+    font-weight: bold;
 }
 .homepage{
-    background-color: $primary-color;
     height: 100vh;
 }
 .homepagenavbtn{
     background-color: $secondary-color;
     color: white;
     width: 120px;
-    padding: 20px 0;
+    padding: 10px 0;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
+    font-family: 'Roboto';
 }
 .herodiv{
     width: 80%;
@@ -36,8 +37,8 @@
     align-items: center;
 }
 .carouselimage{
- width: 500px !important;
- height: 450px !important;
+ width: 550px !important;
+ height: 500px !important;
 }
 .rightsidehero{
     padding: 25px 0;
@@ -53,6 +54,7 @@
     text-transform: uppercase;
     padding: 25px 0;
     color: $secondary-color;
+    font-weight: bold;
 }
 .herosubheading{
     font-size: 20px;
@@ -72,7 +74,7 @@
 .registerbtn{
     background-color: $secondary-color;
     color: white;
-    padding: 20px;
+    padding: 10px;
     width: 100px;
     display: flex;
     justify-content: center;
@@ -80,7 +82,7 @@
     border-radius: 20px;
 }
 .loginbtn{
-    padding: 20px;
+    padding: 10px;
     width: 100px;
     display: flex;
     justify-content: center;

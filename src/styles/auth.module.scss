@@ -1,0 +1,106 @@
+@import './variables.scss';
+.signup{
+ width: 80%;
+
+}
+.signupdiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logindiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+.loginright{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    /* From https://css.glass */
+background: rgba(255, 255, 255, 0.2);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+padding: 10px;
+}
+.signupleft{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.signupright{
+    display: flex;
+    justify-content: flex-end;
+    align-items: end;
+    flex-direction: column;
+}
+.signuprightdiv{
+    width: 90%;
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    flex-direction: column;
+}
+.signupform{
+    width: 80%;
+
+}
+.signupheading{
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    width: 80%;
+    font-family: 'Roboto';
+}
+.signuploginbtn{
+    padding: 10px;
+    width: 70px;
+    display: flex;
+    justify-content: center;
+    margin-left: 20px;
+    align-items: center;
+    background-color: $secondary-color;
+    color: white;
+}
+.signupwelcome{
+    font-family: 'Roboto';
+    font-size: 25px;
+    padding: 15px 0 2px 0;
+    font-weight: bold;
+    width: 80%;
+}
+.signupregister{
+    width: 80%;
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+.forminputs{
+    // border: 2px solid $secondary-color;
+    padding: 5px;
+    margin: 5px 0;
+}
+.forminputselect{
+    // border: 2px solid $secondary-color;
+}
+.signupbtn{
+    padding: 20px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    margin-left: 20px;
+    align-items: center;
+    background-color: $secondary-color;
+    color: white;
+}
+.signupcompanyname{
+    color:$secondary-color;
+}
+.loginform{
+    width: 80%;
+}

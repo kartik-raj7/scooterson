@@ -1,13 +1,15 @@
-body{
-  margin: 0;
-  padding: 0;
-}
 @font-face {
   font-family: 'Roboto';
   src: url('../fonts/Roboto-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
+body{
+  margin: 0;
+  padding: 0;
+  background-color: #c3c5cd;
+}
+
 .slick-slide div{
   display: flex;
   justify-content: center;
