@@ -1,0 +1,58 @@
+@import './variables.scss';
+.adcard{
+    margin: 40px 10px;
+    height: 400px;
+    width: 350px;
+background: rgba(255, 255, 255, 0.2);
+border-radius: 16px;
+box-shadow: 0 4px 30px $secondary-color;
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+display: flex;
+align-items: center;
+flex-direction: column;
+border: 1px solid $primary-color;
+}
+.adcardwrapper{
+    display: flex;
+    justify-content: center;
+}
+.adname{
+   font-size: 22px;
+   color: $primary-color;
+   padding: 10px 0 0 0;
+}
+.add{
+    font-size: 14px;
+    color: white;
+    padding-bottom: 10px;
+}
+.adimage{
+    height: 150px;
+    width: 150px !important;
+    border-radius: 50% !important;
+    margin-top: 25px;
+}
+.custad{
+  font-size: 16px;
+  padding: 5px 10px;
+  color: white;
+}
+@media (max-width:834px){
+    .adcard{
+        width: 340px !important;
+        margin: 40px 0;
+    }
+}
+@media (max-width:576px){
+    .adcard{
+        width: 150px;
+        height: 290px;
+        margin: 40px 0;
+    }
+    .adimage{
+        width: 100px !important;
+        height: 100px ;
+    }
+}

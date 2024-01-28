@@ -22,7 +22,7 @@ const LoginComponent = () => {
         LoginDetails,
         "application/json",
         null,
-        "normal"
+        "auth"
       );
       if (Loginresponse.status == "success") {
         openNotificationWithIcon("success", "Login Successful");

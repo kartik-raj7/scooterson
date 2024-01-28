@@ -108,3 +108,16 @@
     padding: 0 20px;
     // color: $primary-color;
   }
+  .useravatar{
+    background: $secondary-color;
+    color: $secondary-color !important;
+  }
+  .logout{
+    color: $secondary-color;
+    padding-left: 15px;
+  }
+  .logoutoption{
+    color: $secondary-color;
+    font-weight: bold;
+    cursor: pointer;
+  }

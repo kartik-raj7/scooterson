@@ -1,0 +1,121 @@
+@import './variables.scss';
+.mymediacontainer {
+    overflow-y: auto;
+    max-height: 80vh;
+    width: 80%;
+    padding: 30px 0;
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+  }
+  .mymediacontainer::-webkit-scrollbar {
+    width: 8px; 
+  }
+  
+  .mymediacontainer::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }
+
+  .mymediacontainer {
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+  }
+  .contentcreatordashboard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .mymediaheading{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    font-family: 'Roboto';
+    font-size: 28px;
+    padding: 10px 0 30px 0;
+
+  }
+ .mymediabtndiv{
+    display: flex;
+    justify-content: end;
+ }
+.adcarousel{
+   width: 80%;
+}
+
+.customnextarrow,.customprevarrow{
+    color: white;
+    background-color: $primary-color;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+}
+.clientdashboard{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.featuredads{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 30px 0;
+    font-size: 32px;
+    font-family: 'Roboto';
+  }
+  .adcarouseldiv{
+    width:'100%';
+    display: flex;
+    justify-content: center;
+  }
+ .advertiserdashboardlist{
+  height: 70vh !important;
+  overflow-y: auto;
+ }
+ .advertiserdashboard{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   scrollbar-width: thin;
+   scrollbar-color: transparent transparent;
+   scrollbar-width: thin;
+   scrollbar-color: transparent transparent;
+   width: 100%;
+ }
+ .advertiserdashboardcomp{
+  width: 80%;
+ }
+ .advertiserdashboardheadingdiv{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0 0 0;
+ }
+ .advertiserdashboardheading{
+  font-size: large;
+  font-family: 'Roboto';
+  color: $secondary-color;
+  font-weight: bold;
+ }
+ .advertiserdashboardlist{
+  width: 100%;
+ }
+ .advertiserdashboardlistitem{
+  width: 100%;
+ }
+ .advertiserdashboardlistcard{
+  width: 80%;
+ }
+ .adactionbtns{
+  width: 100%;
+  display: flex ;
+  align-items: end;
+  justify-content: end ;
+  padding: 10px 0;
+ }
+ .advertiseradsmediadiv{
+  background-color: green;
+ }

@@ -36,6 +36,24 @@ const routes = [
     exact: true,
     preload: true,
   },
+  {
+    path: "/viewad/:id",
+    component: lazy(() => import("./pages/Viewadindetail")),
+    exact: true,
+    preload: true,
+  },
+  {
+    path: "/postad",
+    component: lazy(() => import("./pages/Postad")),
+    exact: true,
+    preload: true,
+  },
+  {
+    path: "/editad/:id",
+    component: lazy(() => import("./pages/Editad")),
+    exact: true,
+    preload: true,
+  },
 ];
 
 export default routes;

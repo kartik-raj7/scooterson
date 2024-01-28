@@ -9,15 +9,16 @@ export const axiosPost = async (
   data,
   contentType = 'application/json',
   params = null,
-  type = 'normal',
+  type = 'get',
 ) => {
   let response = {};
   let headers = {
     'Content-Type': contentType,
   };
-  if (type === 'normal') {
-    const authToken = localStorage.getItem('authToken');
-    headers['Authorization'] = `Bearer ${authToken}`;
+  if (type === 'get') {
+    const storedUser = localStorage.getItem('user');
+    const user = storedUser ? JSON.parse(storedUser) : null;
+    headers['Authorization'] = `Bearer ${user.token}`;
   }
   try {
     const result = await axiosInstance.post(url, data, {
@@ -50,9 +51,12 @@ export const axiosPost = async (
 export const axiosPatch = async (url, data, contentType = 'application/json') => {
   let response = {};
   try {
+    const storedUser = localStorage.getItem('user');
+    const user = storedUser ? JSON.parse(storedUser) : null;
     const result = await axiosInstance.patch(url, data, {
       headers: {
         'Content-Type': contentType,
+        'Authorization':`Bearer ${user.token}`
       },
     });
     response = result.data;
@@ -69,9 +73,12 @@ export const axiosPatch = async (url, data, contentType = 'application/json') =>
 export const axiosPut = async (url, data, contentType = 'application/json') => {
   let response = {};
   try {
+    const storedUser = localStorage.getItem('user');
+  const user = storedUser ? JSON.parse(storedUser) : null;
     const result = await axiosInstance.put(url, data, {
       headers: {
         'Content-Type': contentType,
+        'Authorization':`Bearer ${user.token}`
       },
     });
     response = result.data;
@@ -88,9 +95,12 @@ export const axiosPut = async (url, data, contentType = 'application/json') => {
 export const axiosGet = async (url, params = {}, contentType = 'application/json') => {
   let response = {};
   try {
+    const storedUser = localStorage.getItem('user');
+    const user = storedUser ? JSON.parse(storedUser) : null;
     const result = await axiosInstance.get(url, {
       headers: {
         'Content-Type': contentType,
+        'Authorization':`Bearer ${user.token}`
       },
       params,
     });
@@ -108,9 +118,12 @@ export const axiosGet = async (url, params = {}, contentType = 'application/json
 export const axiosDelete = async (url, contentType = 'application/json') => {
   let response = {};
   try {
+    const storedUser = localStorage.getItem('user');
+  const user = storedUser ? JSON.parse(storedUser) : null;
     const result = await axiosInstance.delete(url, {
       headers: {
         'Content-Type': contentType,
+        'Authorization':`Bearer ${user.token}`
       },
     });
     response = result.data || {};

@@ -18,3 +18,17 @@ body{
 .slick-active  button{
   background: #61638a;
 }
+.ant-tooltip-inner {
+  color: black !important;
+  background-color: white !important;
+  border: 2px solid #7336fe;
+}
+
+.ant-tooltip-placement-bottom .ant-tooltip-arrow, .ant-tooltip-placement-bottomLeft .ant-tooltip-arrow, .ant-tooltip-placement-bottomRight .ant-tooltip-arrow {
+  border-bottom-color: white !important;
+}
+.ant-list-item{
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}

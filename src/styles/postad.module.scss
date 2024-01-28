@@ -1,0 +1,63 @@
+@import './variables.scss';
+.postad{
+    display: flex;
+    // flex-direction: column ;
+    justify-content: center;
+    // align-items: center;
+    width: 100%;
+}
+.postadform{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    // align-items: center;
+    width: 80%;
+}
+.postadformdiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+.postadheading{
+    width: 80%;
+    font-size: 40px;
+    font-weight: bold;
+    padding: 20px 0 10px 0;
+    -webkit-text-stroke: 1px  $secondary-color;
+    color: white;
+
+}
+.multimediaselectionmodal{
+    width: 80vw !important;
+}
+.multimediadiv{
+    width: 23%;
+    padding: 10px;
+}
+.multimediacontainer{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.multimediaupload{
+    width: 23%;
+    border: 2px dotted $secondary-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.selectedmultimedia{
+  border: 3px solid $secondary-color;
+}
+// .postadformitem{
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     width: 100%;
+//     .ant-row{
+//         width: 100% !important;
+//     }
+// }

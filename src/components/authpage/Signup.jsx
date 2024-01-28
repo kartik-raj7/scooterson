@@ -23,7 +23,7 @@ const [role,selectRole] = useState('client');
       signupData={...signupData,location:values.location}
     }
     try {
-      const signupResponse = await axiosPost(signupUrl, signupData, 'application/json', null, 'normal');
+      const signupResponse = await axiosPost(signupUrl, signupData, 'application/json', null, 'auth');
       console.log(signupResponse)
       if (signupResponse.status=='success') {
          openNotificationWithIcon('success','Signup successful redirecting you to Login page');
