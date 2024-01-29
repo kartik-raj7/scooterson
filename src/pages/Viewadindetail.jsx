@@ -10,7 +10,6 @@ const Viewadindetail = () => {
   return (
     <>
     <Transition>
-        <Navbar/>
         <div className={style.viewad}>
           <div className={style.viewaddiv}>
         <Image src={state.ad_multimedia} preview={false}/>

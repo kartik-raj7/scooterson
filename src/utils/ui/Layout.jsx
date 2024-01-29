@@ -5,7 +5,6 @@ import style from '../../styles/homepage.module.scss'
 const Layout = ({children}) => {
   return (
     <>
-    <Navbar/>
     {children}
     <Footer/>
     </>

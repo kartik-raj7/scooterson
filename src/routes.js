@@ -54,6 +54,12 @@ const routes = [
     exact: true,
     preload: true,
   },
+  {
+    path: "/adanalytics/:id",
+    component: lazy(() => import("./pages/Adanalytics")),
+    exact: true,
+    preload: true,
+  },
 ];
 
 export default routes;

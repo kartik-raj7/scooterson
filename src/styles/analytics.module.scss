@@ -1,0 +1,12 @@
+@import './variables.scss';
+
+.analyticspage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.analyticscontainer{
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+}

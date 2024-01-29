@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from 'react';
-import { List, Card, Button, Space, Row, Image, Col } from 'antd';
+import { List, Card, Button, Space, Row, Image, Col, Modal } from 'antd';
 import { apiRouter } from '../../services/ApiRouter';
 import { openNotificationWithIcon } from '../../utils/utils';
 import { axiosDelete, axiosGet } from '../../services/Api/axios';
 import { Link, useNavigate } from 'react-router-dom';
 import { RiEdit2Line, RiDeleteBinLine } from 'react-icons/ri';
+import { TbDeviceAnalytics } from "react-icons/tb";
 import style from '../../styles/dashboard.module.scss'
+import { IoIosAddCircleOutline } from "react-icons/io";
 import {motion} from 'framer-motion'
 const Advertiserdashboard = () => {
   const navigate = useNavigate();
   const [ads, setAds] = useState([]);
-
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [adtodelete,setAdToDelete] = useState(null);
   const getMyAds = async () => {
     const getMediaUrl = apiRouter.GET_ADS;
     try {
@@ -53,17 +56,30 @@ const Advertiserdashboard = () => {
   const handleEdit = (ad) => {
       navigate(`/editad/id=${ad?._id}`, { state: ad });
     };
-
+  const viewAnalytics = (ad)=>{
+    navigate(`/adanalytics/id=${ad?._id}`, { state: ad });
+  }
   const handleDelete = (adId) => {
-    deleteAd(adId);
+     showModal();
+     setAdToDelete(adId);
   };
-
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+  const handleOk = () => {
+    deleteAd(adtodelete);
+    setIsModalOpen(false);
+  };
+  const handleCancel = () => {
+    setIsModalOpen(false);
+    setAdToDelete(null);
+  };
   return (
     <div className={style.advertiserdashboard}>
     <div className={style.advertiserdashboardcomp}>
       <Row className={style.advertiserdashboardheadingdiv}>
       <Row className={style.advertiserdashboardheading}>My Ads</Row>
-      <Link to='/postad'><Button className={style.postadbtn}>Post new Ad</Button></Link>
+      <Link to='/postad'><Button className={style.postadbtn}><IoIosAddCircleOutline style={{color:'#7336fe',paddingRight:'6px'}}/>Post new Ad</Button></Link>
       </Row>
       <Row className={style.advertiserdashboardlist}>
       <List
@@ -88,15 +104,18 @@ const Advertiserdashboard = () => {
           <List.Item className={style.advertiserdashboardlistitem}>
             <Card className={style.advertiserdashboardlistcard}>
             <Row className={style.adactionbtns}>
-                <Button type="primary" icon={<RiEdit2Line />} onClick={() => handleEdit(ad)}>
+                <Button type="ghost" icon={<RiEdit2Line style={{color:'blue'}}/>} onClick={() => handleEdit(ad)}>
                   Edit
                 </Button>
                 <Button type="danger" icon={<RiDeleteBinLine style={{color:'red'}}/>} onClick={() => handleDelete(ad._id)}>
                   Delete
                 </Button>
+                <Button type="danger" icon={<TbDeviceAnalytics style={{color:'grey'}}/>} onClick={() => viewAnalytics(ad)}>
+                  Analytics
+                </Button>
               </Row>
               <Row style={{display:'flex',justifyContent:'center'}}><Col>
-              {ad.ad_multimedia.includes('mp4')? <video controls width="100%">
+              {ad.ad_multimedia.includes('mp4')? <video controls width="100%" autoPlay={true}>
                         <source src={ad.ad_multimedia} type="video/mp4" />
                         Your browser does not support the video tag.
                       </video>:
@@ -115,6 +134,9 @@ const Advertiserdashboard = () => {
         )}
       />
       </Row>
+      <Modal title="Delete ad" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
+                Are you sure you want to delete this ad?
+              </Modal>
       </div>
     </div>
   );

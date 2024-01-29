@@ -8,8 +8,6 @@ import { Navigate, useNavigate} from 'react-router-dom';
 const UserProfileAvatar = ({ user,logOut }) => {
 const history  = useNavigate();
   function onLogout(){
-        // Delete user key from local storage
-        console.log('here')
         localStorage.removeItem('user');
         logOut();
         history('/login')

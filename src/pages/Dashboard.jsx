@@ -7,10 +7,12 @@ import Navbar from '../components/common/Navbar';
 import { apiRouter } from '../services/ApiRouter';
 import { axiosGet } from '../services/Api/axios';
 import Transition from '../utils/ui/Transition';
+import { useDispatch } from 'react-redux';
+import AdminDashboard from '../components/dashboards/AdminDashboard';
 
 const Dashboard = ({logOut}) => {
   const [userType, setUserType] = useState(null);
-  const [userprofile,setUserProfile] = useState();
+  const dispatch = useDispatch();
   const getUserprofile = async () => {
     const getMediaUrl = apiRouter.USER_PROFILE;
     try {
@@ -20,8 +22,7 @@ const Dashboard = ({logOut}) => {
         'application/json',
       );
       if (myContentresponse.status) {
-        console.log(myContentresponse)
-        setUserProfile(myContentresponse.user);
+        dispatch({ type: 'SET_USER', payload:myContentresponse.user  });
       } else {
         //clear local storage and logout
       }
@@ -30,7 +31,6 @@ const Dashboard = ({logOut}) => {
     }
   };
   useEffect(() => {
-    
     const userData = JSON.parse(localStorage.getItem('user'));
     if (userData) {
       setUserType(userData.type);
@@ -48,14 +48,14 @@ const Dashboard = ({logOut}) => {
         return <Advertiserdashboard />;
       case 'content creator':
         return <Contentcreatordashboard />;
-      default:
-        return <></>;
+      case 'admin':
+        return <AdminDashboard/>;
+      default: return <></>
     }
   };
 
   return <>
   <Transition>
-  <Navbar user={userprofile} logOut={logOut}/>
   {renderDashboard()}
   </Transition>
   </>;

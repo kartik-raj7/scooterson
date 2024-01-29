@@ -10,6 +10,8 @@ export const apiRouter = {
     GET_ADS:'/getads',
     AD:'/ad',
     SEND_RECOVERY_EMAIL:'/password-recovery-email',
-    POST_AD:'/postad'
+    POST_AD:'/postad',
+    USER_SEARCH:'/usersearch',
+    UPDATE_ROLE:'/updaterole'
   };
   

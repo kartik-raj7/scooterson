@@ -1,11 +1,13 @@
-import { Avatar, Button, Col, Image, Row } from 'antd'
+import { Col, Row } from 'antd'
 import React from 'react'
 import style from '../../styles/homepage.module.scss'
 import { GrAnnounce } from "react-icons/gr";
 import {motion} from 'framer-motion'
-import { GrLogout } from 'react-icons/gr';
 import UserProfileAvatar from '../../utils/ui/UserProfileAvatar';
-const Navbar = ({user,logOut}) => {
+import { useSelector } from 'react-redux';
+const Navbar = ({logOut}) => {
+  const data = useSelector((state) => state.user);
+  const {user} = data;
   return (
     <>
     <Row className={style.navbar}>

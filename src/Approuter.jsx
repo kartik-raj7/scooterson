@@ -3,14 +3,17 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-d
 import routes from './routes';
 import NotFoundPage from './pages/Errorpage';
 import { Spin } from 'antd';
-import Dashboard from './pages/Dashboard';
+import Navbar from './components/common/Navbar';
+import { useDispatch } from 'react-redux';
 
 const AppRouter = () => {
   const [isLoggedIn, setisLoggedIn] = useState(localStorage.getItem('user') != null);
+  const dispatch = useDispatch();
   const logIn = () => {
     setisLoggedIn(true);
   };
   const logOut = () => {
+    dispatch({ type: 'DELETE_USER'});
     setisLoggedIn(false);
   };
   return (
@@ -22,12 +25,16 @@ const AppRouter = () => {
               key={path}
               path={path}
               element={
-                // <Component roles={roles} />
-                ((path === '/login' || path === '/signup')) ? (
-                  !isLoggedIn?<Component roles={roles} logIn={logIn}/>:<Navigate to='/dashboard'/>
-                ) : (
-                  <Component roles={roles} logOut={logOut}/>
-                )
+                <>
+                  <Navbar logOut={logOut} />
+                  {(
+                    (path === '/login' || path === '/signup') ? (
+                      !isLoggedIn ? <Component roles={roles} logIn={logIn}/> : <Navigate to='/dashboard'/>
+                    ) : (
+                      isLoggedIn ? <Component roles={roles} logOut={logOut}/> : <Navigate to='/login'/>
+                    )
+                  )}
+                </>
               }
               />
             ))}

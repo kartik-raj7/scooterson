@@ -32,3 +32,6 @@ body{
   justify-content: center !important;
   align-items: center !important;
 }
+.ant-card-body{
+  padding: 0 !important;
+}

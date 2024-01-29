@@ -10,7 +10,7 @@ const { Option } = Select;
 
 const AuthComp = () => {
 const [role,selectRole] = useState('client');
-  const [form] = Form.useForm(); // Add this line
+  const [form] = Form.useForm();
   const Signup = async (values) => {
     const signupUrl = apiRouter.SIGNUP;
     var signupData = {

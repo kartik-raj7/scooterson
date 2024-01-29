@@ -105,10 +105,16 @@
  }
  .advertiserdashboardlistitem{
   width: 100%;
- }
+}
  .advertiserdashboardlistcard{
   width: 80%;
- }
+  box-shadow: rgba(115 , 54 , 254, 0.25) 0px 54px 55px, rgba(115 , 54 , 254, 0.12) 0px -12px 30px, rgba(115 , 54 , 254, 0.12) 0px 4px 6px, rgba(115 , 54 , 254, 0.17) 0px 12px 13px, rgba(115 , 54 , 254, 0.09) 0px -3px 5px;
+background: rgba(255, 255, 255, 0.2) !important;
+border-radius: 16px;
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3); 
+}
  .adactionbtns{
   width: 100%;
   display: flex ;
@@ -119,3 +125,57 @@
  .advertiseradsmediadiv{
   background-color: green;
  }
+ .postadbtn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid $secondary-color; 
+}
+.admindashboard{
+  display: flex;
+  justify-content: center;
+}
+.admindashboardcomponent{
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.admindashboardheading{
+  display: flex;
+  justify-content: center;
+  font-size: 46px;
+  font-family: 'Roboto';
+  color: white;
+  font-weight: bold;
+  -webkit-text-stroke: 1px  $secondary-color;
+  padding: 40px 0;
+}
+.admindashboardformitem{
+  width: 100%;
+  padding: 20px 0;
+}
+.admindashboardform{
+  display: flex;
+  justify-content: center;
+  width: 60%;
+  flex-direction: column;
+}
+.admindashboardsubmitbtndiv{
+  display: flex;
+  justify-content: center;
+}
+.admindashboardsubmitbtn{
+  width: 120px;
+  padding: 20px 15px;
+  display: flex;
+  justify-content: center;
+  font-family: 'Roboto';
+  align-items: center;
+  background-color: $secondary-color;
+  border-radius: 18px;
+  border: 1px solid white;
+  color: white;
+  font-weight: 400;
+}

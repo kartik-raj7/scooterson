@@ -21,11 +21,9 @@ import {
 import style from "../../styles/postad.module.scss";
 import dayjs from "dayjs";
 import { useNavigate } from "react-router-dom";
-import Navbar from "../common/Navbar";
 import { apiRouter } from "../../services/ApiRouter";
 import { axiosGet, axiosPatch, axiosPost } from "../../services/Api/axios";
 import { convertBase64, openNotificationWithIcon } from "../../utils/utils";
-import moment from "moment";
 const { TextArea } = Input;
 const { Option } = Select;
 
@@ -190,7 +188,6 @@ console.log(data)
   }
   return (
     <div>
-      <Navbar />
       <Row className={style.postad}>
         {/* <div className={style.postadform}> */}
         <Col span={12}>
@@ -321,7 +318,7 @@ console.log(data)
               </Select>
             </Form.Item>
 
-            <Form.Item wrapperCol={{ offset: 4, span: 14 }}>
+            <Form.Item >
               <Button type="primary" htmlType="submit" loading={loading}>
                 {type=='edit'?"Edit ad":"Post Ad"}
               </Button>

@@ -105,7 +105,7 @@ export const axiosGet = async (url, params = {}, contentType = 'application/json
       params,
     });
     response = result.data || {};
-    response.status = result?.status === 200;
+    response.status = result?.status <=203;
     response.message = result?.data?.message;
   } catch (e) {
     response.status = false;
