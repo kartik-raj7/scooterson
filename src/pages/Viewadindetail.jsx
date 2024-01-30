@@ -19,11 +19,11 @@ const Viewadindetail = () => {
          ) : (
         <Image src={state.ad_multimedia} preview={false}/>
          )}
-        <div>{state.ad_headline}</div>
-        <div>{state.ad_detail}</div>
-        <div>{state.ad_description}</div>
-        <div>{state.ad_scheduled_time}</div>
-        <div>{state.ad_creator}</div>
+        <div className={style.ad_headline}>{state.ad_headline}</div>
+        <div className={style.ad_detail}>{state.ad_detail}</div>
+        <div className={style.ad_description}>{state.ad_description}</div>
+        <div className={style.ad_scheduled_time}>{state.ad_scheduled_time}</div>
+        <div className={style.ad_creator}>{state.ad_creator}</div>
         </div>
         </div>
     </Transition>
