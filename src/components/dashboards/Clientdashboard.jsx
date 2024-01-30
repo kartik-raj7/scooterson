@@ -13,6 +13,22 @@ import { useNavigate } from 'react-router-dom';
 const Clientdashboard = () => {
   const navigate = useNavigate();
   const [ads,setAds] = useState([]);
+const [currentSlide, setCurrentSlide] = useState(0)
+const [slider1, setSlider1] = useState(null);
+const [adview,setAdView] = useState(true);
+useEffect(()=>{
+  const data = {
+    clicks:[{
+      ad_id:ads[currentSlide]?._id,
+      count:0,
+    }],
+    views:[{
+      ad_id:ads[currentSlide]?._id,
+      count:1,
+    }],
+  }
+  updateClickandViews(ads[currentSlide]?._id,'Views',data);
+},[currentSlide])
   const getAds = async () => {
     const getMediaUrl = apiRouter.GET_ADS;
     try {
@@ -30,9 +46,9 @@ const Clientdashboard = () => {
       openNotificationWithIcon('error', 'Something went wrong');
     }
   };
-  const updateClick = async (id) => {
-    const getMediaUrl = apiRouter.ADD_METRICS;
-    const data={
+  const updateClickandViews = async (id,type,data) => {
+    const updateMetricsUrl = apiRouter.ADD_METRICS;
+    const clicksData={
       clicks:[{
         ad_id:id,
         count:1,
@@ -42,16 +58,22 @@ const Clientdashboard = () => {
         count:1,
       }],
     }
+    if(type=='Clicks'){
+       console.log(clicksData)
+    }
+    else{
+       console.log(data)
+    }
     try {
       const myContentresponse = await axiosPost(
-        getMediaUrl,
-        data,
+        updateMetricsUrl,
+        type=='Clicks'?clicksData:data,
         'application/json',
         null,
         'get'
       );
       if (myContentresponse.status) {
-        setAds(myContentresponse.data);
+        console.log('update api called');
       } else {
         openNotificationWithIcon('error', myContentresponse.message);
       }
@@ -60,15 +82,20 @@ const Clientdashboard = () => {
     }
   };
   useEffect(()=>{
-      getAds();
-  },[])
+     console.log('fresh render');
+      if(adview){
+        getAds();
+        setAdView(false);
+      }
+  },[adview])
   const slidesToShow = isMobileOnly ? 1 : isTablet ? 2 : 3;
   const viewAd = (data) => {
-    updateClick(data._id)
+    updateClickandViews(data._id,'Clicks')
     navigate(`/viewad/id=${data?._id}`, { state: data });
   };
 
   const settings = {
+    onReInit: () => setCurrentSlide(slider1?.innerSlider.state.currentSlide),
     dots: true,
     infinite: true,
     speed: 500,
@@ -76,16 +103,16 @@ const Clientdashboard = () => {
     slidesToScroll: 1,
     autoplay: true,
     swipeToSlide: true,
-    // ...(isMobileOnly ? {} : { prevArrow: <CustomPrevArrow /> }),
-    // ...(isMobileOnly ? {} : { nextArrow: <CustomNextArrow />}),
   };
 
   return (
     <div className={style.clientdashboard}>
       <Row className={style.featuredads}>Featured ads</Row>
       <div className={style.adcarouseldiv}>
-      <Slider {...settings} className={style.adcarousel}>
-        {ads.map((data, index) => (
+      <Slider {...settings} className={style.adcarousel}
+                  ref={(slider) => setSlider1(slider)}
+      >
+        {ads?.map((data, index) => (
           <div key={index} onClick={()=>viewAd(data)} style={{cursor:'pointer'}}>
           <Adcard ad={data} />
           </div>

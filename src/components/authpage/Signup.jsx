@@ -50,11 +50,11 @@ const [role,selectRole] = useState('client');
   return (
     <div className={style.signupdiv}>
       <Row className={style.signup}>
-        <Col className={style.signupleft} span={12}>
+        <Col className={style.signupleft} xs={24} lg={12}>
         <motion.img
             src="/login.png"
             alt="Moving Image"
-            className={style.carouselimage}
+            className={style.loginimage}
             initial={{ y: 0 }}
             animate={{
               y: [0, 30, 0], // Values for y position: start, middle, end
@@ -66,7 +66,7 @@ const [role,selectRole] = useState('client');
             }}
         />
         </Col>
-        <Col className={style.signupright} span={12}>
+        <Col className={style.signupright} xs={24} lg={12}>
         <div className={style.signuprightdiv}>
           <Row className={style.signupheading}>
               <div>Already have an account?</div>

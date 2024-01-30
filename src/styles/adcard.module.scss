@@ -3,16 +3,11 @@
     margin: 40px 10px;
     height: 400px;
     width: 350px;
-background: rgba(255, 255, 255, 0.2);
-border-radius: 16px;
-box-shadow: 0 4px 30px $secondary-color;
-backdrop-filter: blur(5px);
--webkit-backdrop-filter: blur(5px);
-border: 1px solid rgba(255, 255, 255, 0.3);
+@include glass-effect;
 display: flex;
-align-items: center;
 flex-direction: column;
-border: 1px solid $primary-color;
+justify-content: flex-start !important;
+border: 1px solid $secondary-color;
 }
 .adcardwrapper{
     display: flex;
@@ -29,10 +24,8 @@ border: 1px solid $primary-color;
     padding-bottom: 10px;
 }
 .adimage{
-    height: 150px;
-    width: 150px !important;
-    border-radius: 50% !important;
-    margin-top: 25px;
+    max-height: 220px !important;
+    margin-top: 5px;
 }
 .custad{
   font-size: 16px;
@@ -55,4 +48,24 @@ border: 1px solid $primary-color;
         width: 100px !important;
         height: 100px ;
     }
+}
+
+.adheadline{
+    font-size: 28px;
+    font-style: 'Roboto';
+    color: $secondary-color;
+    font-weight: bold;
+    text-decoration: $secondary-color underline;
+    padding-top: 8px;
+    -webkit-text-stroke: 2px  black;
+}
+.addetail{
+    font-size: 18px;
+    padding: 7px 0;
+    color: black;
+}
+.addescription{
+    padding: 5px 0;
+    font-size: 16px;
+    color: white;
 }

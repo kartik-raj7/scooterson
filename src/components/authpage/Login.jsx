@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 const { Option } = Select;
 
 const LoginComponent = () => {
-  const [form] = Form.useForm(); // Add this line
+  const [form] = Form.useForm();
   const Login = async (values) => {
     const LoginUrl = apiRouter.LOGIN;
     var LoginDetails = {
@@ -56,23 +56,23 @@ const LoginComponent = () => {
   return (
     <div className={style.logindiv}>
       <Row className={style.signup}>
-        <Col className={style.signupleft} span={12}>
+        <Col className={style.signupleft} xs={24} lg={14}>
           <motion.img
             src="/login.png"
             alt="Moving Image"
-            className={style.carouselimage}
+            className={style.loginimage}
             initial={{ y: 0 }}
             animate={{
-              y: [0, 30, 0], // Values for y position: start, middle, end
+              y: [0, 30, 0],
             }}
             transition={{
-              repeat: Infinity, // Loops the animation indefinitely
-              duration: 3, // Duration of each animation cycle
-              ease: "easeInOut", // Easing function for smoother animation
+              repeat: Infinity, 
+              duration: 3, 
+              ease: "easeInOut", 
             }}
           />
         </Col>
-        <Col className={style.loginright} span={12}>
+        <Col className={style.loginright} xs={24} lg={10}>
           <Row className={style.signupheading}>
             <div>Dont have an account?</div>
             <Link to="/Signup">
