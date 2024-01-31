@@ -39,6 +39,10 @@
 .carouselimage{
  width: 550px !important;
  height: 500px !important;
+ @media (max-width:$mobile-screen) {
+    width: 300px !important;
+    height: 280px !important;
+ }
 }
 .rightsidehero{
     padding: 25px 0;
@@ -59,6 +63,7 @@
 .herosubheading{
     font-size: 20px;
     padding: 20px 0;
+    color: white;
 }
 .rightsidehero{
     display: flex;

@@ -88,7 +88,7 @@ useEffect(()=>{
         setAdView(false);
       }
   },[adview])
-  const slidesToShow = isMobileOnly ? 1 : isTablet ? 2 : 3;
+  const slidesToShow = 3;
   const viewAd = (data) => {
     updateClickandViews(data._id,'Clicks')
     navigate(`/viewad/id=${data?._id}`, { state: data });
@@ -103,6 +103,27 @@ useEffect(()=>{
     slidesToScroll: 1,
     autoplay: true,
     swipeToSlide: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 836,
+        settings: {
+          slidesToShow: 1,
+        }
+      },
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 1,
+        }
+      }]
   };
 
   return (

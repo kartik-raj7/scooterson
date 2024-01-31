@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 const { Option } = Select;
 
 const AuthComp = () => {
-const [role,selectRole] = useState('client');
+const [role,selectRole] = useState('');
   const [form] = Form.useForm();
   const Signup = async (values) => {
     const signupUrl = apiRouter.SIGNUP;
@@ -78,17 +78,19 @@ const [role,selectRole] = useState('client');
             name="registrationForm"
             onFinish={onFinish}
             onFinishFailed={onFinishFailed}
-            initialValues={{ role: "client" }}
             className={style.signupform}
+            layout="vertical"
           >
             <Form.Item
               name="name"
+              label='Name'
               rules={[{ required: true, message: "Please enter your name!" }]}
             >
               <Input placeholder="Name" className={style.forminputs}/>
             </Form.Item>
             <Form.Item
               name="email"
+              label='Email'
               rules={[
                 { required: true, message: "Please enter your email!" },
                 { type: "email", message: "Invalid email address!" },
@@ -98,6 +100,7 @@ const [role,selectRole] = useState('client');
             </Form.Item>
             <Form.Item
               name="password"
+              label='Password'
               rules={[
                 { required: true, message: "Please enter your password!" },
               ]}
@@ -106,6 +109,7 @@ const [role,selectRole] = useState('client');
             </Form.Item>
             <Form.Item
               name="confirmPassword"
+              label='Confirm Password'
               dependencies={["password"]}
               rules={[
                 { required: true, message: "Please confirm your password!" },
@@ -123,6 +127,7 @@ const [role,selectRole] = useState('client');
             </Form.Item>
             <Form.Item
               name="role"
+              label='Role'
               rules={[{ required: true, message: "Please select a role!" }]}
             >
               <Select placeholder="Select Role" onChange={(e)=>selectRole(e)} className={style.forminputselect}>
@@ -131,14 +136,22 @@ const [role,selectRole] = useState('client');
                 <Option value="Content Creator">Content Creator</Option>
               </Select>
             </Form.Item>
-            {role=='client'&&
+            {role=='Client'&&
               <Form.Item
                 name="location"
+                label='Location'
                 rules={[
                   { required: true, message: "Please enter your location!" },
                 ]}
               >
-                <Input placeholder="Location" className={style.forminputs}/>
+                   <Select placeholder='Location'>
+                <Option value="Delhi">Delhi</Option>
+                <Option value="Delhi">Gurgaon</Option>
+                <Option value="Delhi">Mumbai</Option>
+                <Option value="Delhi">Bangalore</Option>
+                <Option value="Delhi">Noida</Option>
+                <Option value="Delhi">Delhi</Option>
+              </Select>
               </Form.Item>}
             <Form.Item style={{display:'flex',alignItems:'center',justifyContent:'center'}}>
               <Button type="primary" htmlType="submit" className={style.signupbtn}>

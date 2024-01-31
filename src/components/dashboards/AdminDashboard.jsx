@@ -84,13 +84,14 @@ const AdminDashboard = () => {
             form={form}
             className={style.admindashboardform}
             disabled={loading}
+            layout="vertical"
           >
       <Row>
       <Form.Item
               name="user"
-              label="user"
+              label="User"
               rules={[{ required: true, message: "Please select a user" }]}
-              className={style.admindashboardformitem}
+              className={`${style.admindashboardformitem} postadformitem`}
             >
         <Select
           showSearch
@@ -107,7 +108,7 @@ const AdminDashboard = () => {
               name="role"
               label="Role"
               rules={[{ required: true, message: "Please select a role!" }]}
-              className={style.admindashboardformitem}
+              className="postadformitem"
             >
               <Select placeholder="Select Role" className={style.forminputselect}>
                 <Option value="Client">Client</Option>

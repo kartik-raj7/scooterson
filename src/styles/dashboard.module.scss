@@ -22,10 +22,23 @@
     scrollbar-color: transparent transparent;
   }
   .contentcreatordashboard{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include center-flexbox
   }
+  .mymedialist{
+    display: flex;
+    width: 100%;
+  }
+  .mymediacard{
+    width: 30%;
+    height: 100%;
+    @media(max-width:$tablet-screen){
+      width: 46%;
+    }
+    @media(max-width:$mobile-screen){
+      width: 100%;
+    }
+  }
+  
   .mymediaheading{
     width: 100%;
     display: flex;
@@ -34,6 +47,7 @@
     font-family: 'Roboto';
     font-size: 28px;
     padding: 10px 0 30px 0;
+    color:white;
 
   }
  .mymediabtndiv{
@@ -43,7 +57,9 @@
 .adcarousel{
    width: 80%;
 }
-
+.advertiseradsimage{
+  width: 70%;
+}
 .customnextarrow,.customprevarrow{
     color: white;
     background-color: $primary-color;
@@ -89,6 +105,14 @@
    scrollbar-color: transparent transparent;
    width: 100%;
  }
+ .advertiseradsvideo{
+  width: 70%;
+ }
+ .advertisermultimediacontainer{
+  width: 80%;
+  display: flex;
+    justify-content: center;
+ }
  .advertiserdashboardcomp{
   width: 80%;
  }
@@ -104,18 +128,33 @@
   font-weight: bold;
  }
  .advertiserdashboardlist{
-  width: 100%;
+  width: 100% ;
+  display: flex !important;
+ }
+ .advertiserad{
+  font-size: 30px;
+  padding: 10px;
+  color: white;
+  margin: 2px 0;
+ }
+ .advertiseraddetail{
+  margin: 0;
+  padding: 10px;
+  font-size: 16px;
+
+ }
+ .adtimeperiod{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
  }
  .advertiserdashboardlistitem{
-  width: 100%;
+  width: 100% ;
 }
  .advertiserdashboardlistcard{
-  width: 80%;
-  box-shadow: rgba(115 , 54 , 254, 0.25) 0px 54px 55px, rgba(115 , 54 , 254, 0.12) 0px -12px 30px, rgba(115 , 54 , 254, 0.12) 0px 4px 6px, rgba(115 , 54 , 254, 0.17) 0px 12px 13px, rgba(115 , 54 , 254, 0.09) 0px -3px 5px;
-background: rgba(255, 255, 255, 0.2) !important;
-border-radius: 16px;
-backdrop-filter: blur(5px);
--webkit-backdrop-filter: blur(5px);
+width: 100% ;
+@include glass-effect;
 border: 1px solid rgba(255, 255, 255, 0.3); 
 }
  .adactionbtns{
@@ -124,6 +163,17 @@ border: 1px solid rgba(255, 255, 255, 0.3);
   align-items: end;
   justify-content: end ;
   padding: 10px 0;
+  @media(max-width:$tablet-screen){
+    justify-content: start;
+    flex-direction: row;
+    // align-items: center;
+  }
+ }
+ .adactionbtn{
+  color:white;
+  @media(max-width:$tablet-screen){
+  padding: 4px 10px !important;
+  }
  }
  .advertiseradsmediadiv{
   background-color: green;
@@ -164,10 +214,14 @@ border: 1px solid rgba(255, 255, 255, 0.3);
   justify-content: center;
   width: 60%;
   flex-direction: column;
+  @media(max-width:$mobile-screen){
+    width: 100%;
+  }
 }
 .admindashboardsubmitbtndiv{
   display: flex;
   justify-content: center;
+  margin-top: 20px;
 }
 .admindashboardsubmitbtn{
   width: 120px;

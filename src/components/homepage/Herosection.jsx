@@ -8,9 +8,9 @@ const Herosection = () => {
   return (
     <div className={style.herostyle}>
     <div className={style.herodiv}>
-    <Row>
-    <Col className={style.leftsidehero} span={12}>
-    <div className={style.heroheading}>Lorem ipsum dolor</div>
+    <Row >
+    <Col className={style.leftsidehero} xs={24} lg={12}>
+    <div className={style.heroheading}>One Stop for all advertising needs</div>
     <div className={style.herosubheading}>
     {text.map((el, i) => (
         <motion.span
@@ -33,13 +33,15 @@ const Herosection = () => {
             
             </motion.button>
             </Link>
+            <Link to='/login'>
             <motion.button whileTap={{ scale: 0.85 }} className={style.loginbtn}>
             Sign In
             </motion.button>
+            </Link>
         </Space>
         
        </Col>
-    <Col className={style.rightsidehero} span={12}>
+    <Col className={style.rightsidehero} xs={24} lg={12}>
         <div className={style.rightsidecarouseldiv}>
         {/* <Carousel autoplay>
             <div><Image src='../../../ad1r.png' preview={false} className={style.carouselimage}/></div> 

@@ -104,29 +104,29 @@ const Advertiserdashboard = () => {
           <List.Item className={style.advertiserdashboardlistitem}>
             <Card className={style.advertiserdashboardlistcard}>
             <Row className={style.adactionbtns}>
-                <Button type="ghost" icon={<RiEdit2Line style={{color:'blue'}}/>} onClick={() => handleEdit(ad)}>
+                <Button type="ghost" icon={<RiEdit2Line style={{color:'black'}}/>} onClick={() => handleEdit(ad)}  className={style.adactionbtn}>
                   Edit
                 </Button>
-                <Button type="danger" icon={<RiDeleteBinLine style={{color:'red'}}/>} onClick={() => handleDelete(ad._id)}>
+                <Button type="danger" icon={<RiDeleteBinLine style={{color:'black'}}/>} onClick={() => handleDelete(ad._id)}  className={style.adactionbtn}>
                   Delete
                 </Button>
-                <Button type="danger" icon={<TbDeviceAnalytics style={{color:'grey'}}/>} onClick={() => viewAnalytics(ad)}>
+                <Button type="danger" icon={<TbDeviceAnalytics style={{color:'black'}}/>} onClick={() => viewAnalytics(ad)}  className={style.adactionbtn}>
                   Analytics
                 </Button>
               </Row>
-              <Row style={{display:'flex',justifyContent:'center'}}><Col>
-              {ad.ad_multimedia.includes('mp4')? <video controls width="100%" autoPlay={true}>
+              <Row style={{display:'flex',justifyContent:'center'}}><Col className={style.advertisermultimediacontainer}>
+              {ad.ad_multimedia.includes('mp4')? <video controls width="100%" autoPlay={true} className={style.advertiseradsvideo}>
                         <source src={ad.ad_multimedia} type="video/mp4" />
                         Your browser does not support the video tag.
                       </video>:
               <Image src={ad.ad_multimedia} className={style.advertiseradsimage}/>
                }
               </Col></Row>
-              <h3>{ad.ad_headline}</h3>
-              <p>{ad.ad_detail}</p>
-              <Space>
-                <span>{`Scheduled Time: ${ad.ad_scheduledtime}`}</span>
-                <span>{`Expiration Time: ${ad.ad_expirationtime}`}</span>
+              <h3 className={style.advertiserad}>{ad.ad_headline}</h3>
+              <p className={style.advertiseraddetail}>{ad.ad_description}</p>
+              <Space className={style.adtimeperiod}>
+                <span><span style={{color:'white',fontWeight:'bold',paddingRight:'5px'}}>Scheduled Time:</span> <span>{ad.ad_scheduledtime.slice(0,10)}</span></span>
+                <span><span style={{color:'white',fontWeight:'bold',paddingRight:'5px'}}>Expiration Time:</span> <span>{ad.ad_expirationtime.slice(0,10)}</span></span>
               </Space>
             </Card>
           </List.Item>

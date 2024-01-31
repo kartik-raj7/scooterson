@@ -190,14 +190,14 @@ console.log(data)
     <div>
       <Row className={style.postad}>
         {/* <div className={style.postadform}> */}
-        <Col span={12}>
+        <Col xs={24} lg={12}>
           <Image
             src="/postad.png"
             className={style.postadimage}
             preview={false}
           />
         </Col>
-        <Col span={12} className={style.postadformdiv}>
+        <Col xs={24} lg={12} className={style.postadformdiv}>
           <Row className={style.postadheading}>{type?"Edit Ad":"Post Ad"}</Row>
           <Form
             form={form}
@@ -215,7 +215,7 @@ console.log(data)
               rules={[
                 { required: true, message: "Please enter the ad headline" },
               ]}
-              className={style.postadformitem}
+              className="postadformitem"
             >
               <Input />
             </Form.Item>
@@ -229,7 +229,7 @@ console.log(data)
                   message: "Please select or upload the ad multimedia",
                 },
               ]}
-              className={style.postadformitem}
+                className="postadformitem"
             >
               <Button onClick={showModal}>
                 <GrAddCircle />
@@ -274,7 +274,7 @@ console.log(data)
               rules={[
                 { required: true, message: "Please enter the ad detail" },
               ]}
-              className={style.postadformitem}
+                className="postadformitem"
             >
               <Input />
             </Form.Item>
@@ -285,7 +285,7 @@ console.log(data)
               rules={[
                 { required: true, message: "Please enter the ad description" },
               ]}
-              className={style.postadformitem}
+                className="postadformitem"
             >
               <TextArea />
             </Form.Item>
@@ -295,7 +295,7 @@ console.log(data)
               rules={[
                 { required: true, message: "Please select the scheduled time" },
               ]}
-              className={style.postadformitem}
+                className="postadformitem"
             >
               <RangePicker format="DD-MM-YYYY" disabledDate={disabledDate}/>
             </Form.Item>
@@ -305,7 +305,7 @@ console.log(data)
               rules={[
                 { required: true, message: "Please select the ad location" },
               ]}
-              className={style.postadformitem}
+                className="postadformitem"
             >
               <Select>
                 <Option value="Delhi">Delhi</Option>
@@ -318,8 +318,8 @@ console.log(data)
               </Select>
             </Form.Item>
 
-            <Form.Item >
-              <Button type="primary" htmlType="submit" loading={loading}>
+            <Form.Item className={style.posteditadbtndiv}>
+              <Button type="primary" htmlType="submit" loading={loading} className={style.posteditadbtn}>
                 {type=='edit'?"Edit ad":"Post Ad"}
               </Button>
             </Form.Item>

@@ -1,12 +1,14 @@
 @import './variables.scss';
 
 .analyticspage{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+   @include center-flexbox;
 }
 .analyticscontainer{
     display: flex;
     flex-wrap: wrap;
     width: 80%;
+    @media (max-width:$tablet-screen){
+        justify-content: start;
+        align-items: center;
+    }
 }

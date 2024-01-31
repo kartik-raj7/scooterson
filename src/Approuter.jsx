@@ -28,7 +28,7 @@ const AppRouter = () => {
                 <>
                   <Navbar logOut={logOut} />
                   {(
-                    (path === '/login' || path === '/signup') ? (
+                    (path === '/login' || path === '/signup'||path === '/home') ? (
                       !isLoggedIn ? <Component roles={roles} logIn={logIn}/> : <Navigate to='/dashboard'/>
                     ) : (
                       isLoggedIn ? <Component roles={roles} logOut={logOut}/> : <Navigate to='/login'/>

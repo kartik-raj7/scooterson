@@ -1,13 +1,45 @@
+@import './variables.scss';
 .viewad{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include center-flexbox;
     padding-top: 20px;
 }
 .viewaddiv{
     width: 80%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include center-flexbox;
     flex-direction: column;
+}
+.admultimedia{
+    height: 40%;
+    border: 2px solid white;
+    padding: 5px;
+}
+.adheadline{
+    color: white;
+    font-size: 35px;
+    padding: 20px 0;
+    font-family: 'Roboto';
+    text-decoration: $secondary-color underline;
+}
+.addetail{
+    color: white;
+    font-family: 'Roboto';
+    font-size: 18px;
+    padding-bottom: 10px;
+}
+.addescription{
+    font-size: 15px;
+    color: $secondary-color;
+    font-family: 'Roboto';
+}
+.adcreator{
+    font-size: 15px;
+    color: $secondary-color;
+    font-family: 'Roboto';
+    padding: 10px;
+    width: 100%;
+    @include end-flexbox;
+}
+.postedby{
+    color: white;
+    margin-right: 10px;
 }

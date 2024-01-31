@@ -35,3 +35,21 @@
 .ant-card-body{
   padding: 0 !important;
 }
+.ant-spin-nested-loading , .ant-spin-container{
+  width:100% !important;
+}
+.ant-list-items{
+  width: 100% !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+.ant-list-items .card{
+  
+width: 100% !important;
+}
+.postadformitem
+  .ant-form-item-required{
+    color: white !important;
+  }

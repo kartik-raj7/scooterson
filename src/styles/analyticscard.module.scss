@@ -14,6 +14,12 @@ display: flex;
 flex-direction: column;
 justify-content: flex-start;
 padding: 5px 10px;
+@media (max-width:$tablet-screen){
+    width: 46%;
+}
+@media (max-width:$mobile-screen){
+    width: 100%;
+}
 }
 .analyticstitle{
     border-bottom: 1px solid rgba(115, 54, 254, 0.5);

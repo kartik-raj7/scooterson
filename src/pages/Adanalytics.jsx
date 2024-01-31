@@ -6,6 +6,7 @@ import Transition from '../utils/ui/Transition';
 const Adanalytics = () => {
   const { state } = useLocation();
   console.log(state);
+  var formattedPercentage = (state.metrics.ad_clicks/state.metrics.ad_view).toFixed(2);
   return (
     <>
     <Transition>
@@ -13,7 +14,7 @@ const Adanalytics = () => {
         <div className={style.analyticscontainer}>
             <AnalyticsCard data={{ title: "Clicks", percentage: "45", metrics: state.metrics.ad_clicks }}/>
             <AnalyticsCard data={{ title: "Views", percentage: "37", metrics: state.metrics.ad_view }}/>
-            <AnalyticsCard data={{ title: "Conversions", percentage: "0", metrics: state.metrics.ad_clicks/state.metrics.ad_view }}/>
+            <AnalyticsCard data={{ title: "Conversions", percentage: "0", metrics: formattedPercentage }}/>
         </div>
     </div>
     </Transition>

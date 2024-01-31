@@ -5,6 +5,7 @@ import { apiRouter } from '../../services/ApiRouter';
 import { List, Card, Image, Row, Col, Button, Modal, Upload, message } from 'antd';
 import { UploadOutlined, CloseCircleOutlined, CheckCircleOutlined } from '@ant-design/icons';
 import style from '../../styles/dashboard.module.scss';
+import { isMobileOnly } from 'react-device-detect';
 
 const Contentcreatordashboard = () => {
   const [myMedia, setMyMedia] = useState([]);
@@ -113,11 +114,10 @@ const Contentcreatordashboard = () => {
         </Row>
         <List
           dataSource={myMedia}
-          grid={{ gutter: 20, column: 4 }}
           className={style.mymedialist}
           renderItem={(data, index) => (
             data.resource_type === 'video'?<List.Item key={index}>
-                    <Card>
+                    <Card className={style.mymediacard}>
                       <video controls width="100%">
                         <source src={data.url} type="video/mp4" />
                         Your browser does not support the video tag.
@@ -125,8 +125,8 @@ const Contentcreatordashboard = () => {
                     </Card>
                   </List.Item>
                  :
-                  <List.Item key={index}>
-                    <Card cover={<Image src={data.url} preview={false} />} style={{ width: 160 }}>
+                  <List.Item key={index} className={style.mymediacard}>
+                    <Card cover={<Image src={data.url}  />}>
                     </Card>
                   </List.Item>
           )}
